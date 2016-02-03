@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" src="bower_components\bootstrap\dist\css\bootstrap.min.css"></link>
+<script src="\bower_components\jquery\dist\jquery.min.js"></script>
+</head>
+
+<script type="text/javascript">
+ function afficherSucessDiv()
+ {
+ document.getElementById("SucessDiv").style.display = "Block";
+document.getElementById("DangerDiv").style.display = "none";
+document.getElementById("DefaultDiv").style.display = "none";
+
+ }
+  function afficherDangerDiv()
+ {
+ document.getElementById("SucessDiv").style.display = "none";
+document.getElementById("DangerDiv").style.display = "Block";
+document.getElementById("DefaultDiv").style.display = "none";
+
+ }
+ 
+   function afficherDefaultDiv()
+ {
+ document.getElementById("SucessDiv").style.display = "none";
+document.getElementById("DangerDiv").style.display = "none";
+document.getElementById("DefaultDiv").style.display = "Block";
+
+ }
+ 
+ function AddContentToHelloDiv()
+ {
+ var text =  "Hello "+document.getElementById("TextToAdd").value;
+  document.getElementById("Hello").innerHTML= text;
+
+ }
+</script>
+<body class="container" ng-app>
+<h1>ngModel</h1>
+<div>
+<input id="TextToAdd" type="text" onkeyup="javascript:AddContentToHelloDiv();">
+<div id="Hello">Hello </div>
+</div>
+
+<h1>ngClicK</h1>
+<div>
+<input type="button" value="Sucess" onclick="javascript:afficherSucessDiv();">
+<input type="button" value="Danger" onclick="javascript:afficherDangerDiv();">
+<input type="button" value="Default" onclick="javascript:afficherDefaultDiv();">
+
+<div style="display:none" id="SucessDiv">Contenu Sucess avec angular</div>
+<div style="display:none" id="DangerDiv">Contenu Danger avec angular</div>
+<div style="display:none" id="DefaultDiv"></div>
+
+<div>
+
+
+
+<div class="jumbotron">
+<label for="name">Name:</label>
+<!-- Directive ng-model -->
+
+<input type="text" ng-model="yourName" placeholder="enter a name here">
+<h2>hello{{yourName}}</h2>
+
+
+</div>
+<script src="bower_components\angular\angular.min.js"></script> 
+</body>
+
+<html>

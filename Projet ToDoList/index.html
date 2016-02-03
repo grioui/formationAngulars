@@ -1,0 +1,72 @@
+<html>
+<head>
+<link rel="stylesheet" src="bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<style>
+
+.done-true {
+
+  text-decoration: line-through;
+
+  color: grey;
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="row-fluid" ng-app="todoApp">
+
+      <div class="jumbotron col-xs-8 col-xs-offset-2">
+
+        <h2>Todo</h2>
+
+        <div class="container-fluid" ng-controller="TodoListController">
+
+            <span>{{ remaining() }} of {{ todos.length }} remaining</span> [ <a href ng-click="archive()">archive</a> ]
+
+            <ul class="list-group">
+
+               <li class="list-group-item" ng-repeat="todo in todos">
+
+                    <input type="checkbox" ng-model="todo.done">
+
+                    <span class="done-{{ todo.done }}">{{ todo.text }}</span>
+
+                </li>
+
+
+
+             
+
+
+            </ul>
+
+
+
+            <form>
+
+
+
+               <input type="text" placeholder="Add new todo here" ng-model="formNewTodo">
+               <button class="btn btn-primary" ng-click="addTodo()" type="submit">Add</button>
+
+            </form>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="MyCustomJs.js"></script>
+</body>
+
+<html>
